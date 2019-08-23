@@ -1,2 +1,2 @@
 
-270;get_winners;requests;1566556289.644548;-0.713829755783081;https://www.imdb.com/search/title/?count=100&groups=oscar_best_picture_winners&sort=year,desc&start=1&ref_=nv_ch_osc;https://www.imdb.com/search/title/?count=100&groups=oscar_best_picture_winners&sort=year,desc&start=1&ref_=nv_ch_osc;514335;200;True;
+287;get_nominees;requests;1566561428.3703775;-0.5191311836242676;https://www.imdb.com/search/title/?groups=oscar_best_picture_nominees&start=551&ref_=adv_nxt;https://www.imdb.com/search/title/?groups=oscar_best_picture_nominees&start=551&ref_=adv_nxt;99639;200;True;
