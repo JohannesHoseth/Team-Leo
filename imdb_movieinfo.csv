@@ -939,3 +939,4 @@
 10;get_metadata;requests;1566594370.4508667;-1.0625958442687988;https://www.imdb.com/title/tt0021826/;https://www.imdb.com/title/tt0021826/;199879;200;True;
 2;get_metadata;requests;1566594372.9354572;-1.3124394416809082;https://www.imdb.com/title/tt0025601/;https://www.imdb.com/title/tt0025601/;205282;200;True;
 3;get_metadata;requests;1566594375.4978228;-1.093705654144287;https://www.imdb.com/title/tt0025986/;https://www.imdb.com/title/tt0025986/;201023;200;True;
+4;imdb_mov;requests;1566740242.4590988;-0.9444842338562012;https://www.imdb.com/title/tt0993846/;https://www.imdb.com/title/tt0993846/;230582;200;True;
