@@ -6,7 +6,7 @@ machine learning methods to predict the next winning movie. For each movie a ser
 ## To do:
 
 - [x] Write final functions for scraping the IMDB sites
-- [ ] Add budget and box office numbers to dataset
+- [x] Add budget and box office numbers to dataset
 - [ ] Re-scrape the IMDB sites for updated content
 - [ ] Tidy data
 - [ ] Apply machine learning algorithm to dataset
@@ -31,10 +31,11 @@ The column *won_oscar* expresses weather or not the movie won an oscar for 'Best
 
 ## How to use:
 
-The [oscar_scraper.ipynb](oscar_scraper.ipynb) notebook includes all functions required to scrape the sites/subsites. There are three main functions:
+The [oscar_scraper.ipynb](oscar_scraper.ipynb) notebook includes all functions required to scrape the sites/subsites. There are three sub functions and a main function:
 - `get_movies` (scrapes the list of movies)
 - `get_awards` (scrapes the number of acadamy awards each director/actor has been nominated for and won)
 - `get_metadata` (scrapes extra data for each movie)
+- `get_data` (runs all the scrapers and tidys the data)
 
 #### get_movies:
 This function accepts one of two inputs, *'winners'* or *'nominees'*, which will determine which site to scrape. The *'winners'* input scrapes [this](https://www.imdb.com/search/title/?count=100&groups=oscar_best_picture_winners&sort=year,desc&ref_=nv_ch_osc) site, whereas the *'nominees'* scrapes [this](db.com/search/title/?groups=oscar_best_picture_nominees&start=1&ref_=adv_nxt) and subsequent pages. 
@@ -65,20 +66,32 @@ This functions accepts one input, a url to the IMDB movie page. The url comes fr
 get_metadata(movie_url)
 ```
 
-### Put together
+### get_data()
 
 ```
-movies   = get_movies('nominees')
-awards   = [get_awards(i) for i in movies.link_people]
-metadata = [get_metadata(i) for i in movies.link_movie]
+def get_data():
+    for i in ['winners', 'nominees']:
+        print('... Initializing "%s" scraper ...' %i)
+        
+        movies   = get_movies(i)
+        print('... Movies has been scraped ...')
+        
+        awards   = [get_awards(i) for i in movies.link_people]
+        print('... Awards has been scraped ...')
+        
+        metadata = [get_metadata(i) for i in movies.link_movie]
+        print('... Metadata has been scraped ...')
+    
+        awards   = pd.DataFrame(awards, columns=['nom_people_sum', 'won_people_sum'])
+        metadata = pd.DataFrame(metadata)
 
-awards   = pd.DataFrame(awards, columns=['nom_people_sum', 'won_people_sum'])
-metadata = pd.DataFrame(metadata, columns = ['country', 'language', 'release_date', 'budget', 'color', 'aspect_ratio'])
+        df = movies.merge(awards, left_index = True, right_index = True)
+        df = df.merge(metadata, left_index = True, right_index = True)
 
-df       = movies.merge(awards, left_index = True, right_index = True)
-df       = df.merge(metadata, left_index = True, right_index = True)
-
-df.to_csv('oscar_movies.csv')
+        df.to_csv('oscar_%s.csv' % i)
+        print('... CSV file: oscar_%s.csv has been created ...' % i)
+        
+        return df
 ```
 
 ## Contributers:
