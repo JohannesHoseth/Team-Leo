@@ -7,8 +7,8 @@ machine learning methods to predict the next winning movie. For each movie a ser
 
 - [x] Write final functions for scraping the IMDB sites
 - [x] Add budget and box office numbers to dataset
-- [ ] Re-scrape the IMDB sites for updated content
-- [ ] Tidy data
+- [x] Re-scrape the IMDB sites for updated content
+- [x] Tidy data
 - [ ] Apply machine learning algorithm to dataset
 - [ ] Analyze the logfiles
 - [ ] ***Add more here***
