@@ -13,6 +13,12 @@ machine learning methods to predict the next winning movie. For each movie a ser
 - [ ] Analyze the logfiles
 - [ ] ***Add more here***
 
+    ### To add/consider for report:
+        - Descriptive Statistics table (mean,std,max,min...)
+        - Did scraper act in accordance to website policy? 
+        - Mention issues with geotrack (data in EN but data in DK)
+        - mapping of scraping procedure? (figure showing different branches of scraping process?)
+
 ## Descriptive statistics
 
 <p align="center">
