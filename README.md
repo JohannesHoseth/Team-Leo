@@ -13,21 +13,15 @@ machine learning methods to predict the next winning movie. For each movie a ser
 - [ ] Analyze the logfiles
 - [ ] ***Add more here***
 
-## dataset
+##
 
-The dataset [oscar_movies.csv](oscar_movies.csv) include all variables scraped from IMDB, this includes:
+[](Plots/plt_genres.png "Genres of Oscar nominated movies")
+[](Plots/plt_metascore.png "Metascore of Oscar winning and nominated movies")
+[](Plots/plt_runtime.png "Runtime of Oscar winning and nominated movies")
 
-['title', 'year', 'runtime_min', 'genre', 'metascore', 'gross_mil',
-'link_movie', 'director', 'actors', 'link_people', 'nom_people_sum', 'won_people_sum',
-'country', 'language', 'release_date', 'budget', 'color', 'aspect_ratio',
-'won_oscar', 'Adventure', 'Drama', 'War', 'Crime', 'Biography', 'Music',
-'History', 'Romance', 'Mystery', 'Western', 'Comedy', 'Action',
-'Sci-Fi', 'Horror', 'Thriller', 'Fantasy', 'Musical', 'Family', 'Sport',
-'Animation', 'Film-Noir', 'Documentary']
+# data
 
-The column *Nominated* expresses the sum of oscar nominations, for the director and the main cast, where the column *Won* expresses the sum of oscar winnings for the same.
-
-The column *won_oscar* expresses weather or not the movie won an oscar for 'Best Picture'.
+The dataset [oscar_movies.csv](oscar_movies.csv) is the all inclusive dataset, and [oscar_movies_ML.csv](oscar_movies_ML.csv) is the machine learning dataset.
 
 ## How to use:
 
