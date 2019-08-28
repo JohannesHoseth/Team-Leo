@@ -13,13 +13,14 @@ machine learning methods to predict the next winning movie. For each movie a ser
 - [ ] Analyze the logfiles
 - [ ] ***Add more here***
 
-##
+## Descriptive statistics
 
-[](Plots/plt_genres.png "Genres of Oscar nominated movies")
-[](Plots/plt_metascore.png "Metascore of Oscar winning and nominated movies")
-[](Plots/plt_runtime.png "Runtime of Oscar winning and nominated movies")
+<img src="Plots/plt_genres.png" width=80%>
 
-# data
+<img src="Plots/plt_runtime.png" width=49%> <img src="Plots/plt_metascore.png" width=49%>
+
+
+# Data
 
 The dataset [oscar_movies.csv](oscar_movies.csv) is the all inclusive dataset, and [oscar_movies_ML.csv](oscar_movies_ML.csv) is the machine learning dataset.
 
@@ -64,12 +65,14 @@ get_metadata(movie_url)
 
 ```
 def get_data():
-    for i in ['winners', 'nominees']:
-        print('... Initializing "%s" scraper ...' %i)
+    win_nom = []
+    
+    for movie_list in ['winners', 'nominees']:
+        print('... Initializing "%s" scraper ...' %movie_list)
         
-        movies   = get_movies(i)
+        movies   = get_movies(movie_list)
         print('... Movies has been scraped ...')
-        
+    
         awards   = [get_awards(i) for i in movies.link_people]
         print('... Awards has been scraped ...')
         
@@ -81,12 +84,36 @@ def get_data():
 
         df = movies.merge(awards, left_index = True, right_index = True)
         df = df.merge(metadata, left_index = True, right_index = True)
-
-        df.to_csv('oscar_%s.csv' % i)
-        print('... CSV file: oscar_%s.csv has been created ...' % i)
         
-        return df
+        df.to_csv('oscar_%s.csv' % movie_list)
+        print('... CSV file: oscar_%s.csv has been created ...' % movie_list)
+        
+        win_nom.append(df)
+        
+    return win_nom
 ```
+
+Output while running:
+
+```
+... Initializing "winners" scraper ...
+... Movies has been scraped ...
+... Awards has been scraped ...
+... Metadata has been scraped ...
+... CSV file: oscar_winners.csv has been created ...
+... Initializing "nominees" scraper ...
+... Movies has been scraped ...
+... Awards has been scraped ...
+... Metadata has been scraped ...
+... CSV file: oscar_nominees.csv has been created ...
+```
+
+### Merging datasets
+
+```
+nom = nom.assign(won_oscar = lambda nom: nom.title.isin(win.title))
+```
+
 
 ## Contributers:
 @JohannesHoseth
