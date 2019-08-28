@@ -15,7 +15,9 @@ machine learning methods to predict the next winning movie. For each movie a ser
 
 ## Descriptive statistics
 
-<img src="Plots/plt_genres.png" width=80%>
+<p align="center">
+    <img src="Plots/plt_genres.png" width=80%>
+</p>
 
 <img src="Plots/plt_runtime.png" width=49%> <img src="Plots/plt_metascore.png" width=49%>
 
