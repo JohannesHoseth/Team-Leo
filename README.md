@@ -21,7 +21,7 @@ machine learning methods to predict the next winning movie. For each movie a ser
 
 ## Descriptive statistics
 <p align="center">
-    <img src="oscarawards.png" width=80%>
+    <img src="Plots/Qwin1" width=80%>
     
 <p align="center">
     <img src="Plots/plt_budget.png" width=80%>
