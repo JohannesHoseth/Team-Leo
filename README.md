@@ -28,22 +28,45 @@ The figures above shows the time spent for each scraping loop and the length of 
 
 ## Descriptive statistics
 
+The data collected from the IMDb website is of both quantitative and qualitative nature.  While the qualitative data mainly pertains to information on the technical and production features of the movies, most of the quantitative data describes financial aspects.  Summary statistics for numerical variables are computed in order to get a clear idea of what the data looks like (table below).
+
+|                         | Count | Mean  | Std   | Min   | 25%   | 50%   | 75%   | Max    |
+|-------------------------|-------|-------|-------|-------|-------|-------|-------|--------|
+| Runtime (min)           | 557.0 | 124.6 | 26.5  | 66.0  | 106.0 | 120.0 | 137.0 | 238.0  |
+| MetaScore               | 341.0 | 80.9  | 11.4  | 34.0  | 74.0  | 83.0  | 89.0  | 100.0  |
+| US. Gross ($M)          | 381.0 | 73.9  | 92.9  | 0.01  | 18.3  | 44.8  | 100.3 | 760.5  |
+| Crew Nominations (cum.) | 557.0 | 7.3   | 5.3   | 0.0   | 3.0   | 7.0   | 10.0  | 36.0   |
+| Crew Oscars (cum.)      | 557.0 | 2.5   | 1.9   | 0.0   | 1.0   | 2.0   | 4.0   | 9.0    |
+| Budget ($M)             | 417.0 | 21.1  | 33.8  | 60.0  | 2.0   | 8.2   | 25.0  | 237.0  |
+| Worldwide Gross ($M)    | 348.0 | 160.4 | 264.9 | 576.0 | 26.1  | 75.4  | 205.9 | 2789.9 |
+
+In order to investigate whether Oscar wins and movie release dates are somehow connected,the release dates are grouped by quarter.  In a regression analysis attempting to predict whethera movie is an Oscar-winning movie, Kaplan (2005) includes a dummy variable set to 1 if themovie is released in the fourth quarter.  The idea is that movies released during last quarterof the year are already trending and gain critical success and support just before the Academyballots are due to be filled.  In fact, many producers attempt to time the release of potentialOscar-winning movies so that they are in the theatres during the last quarter of the year. The figure below is perfectly in line with the latter argument. Within the Best Pictures category, 47 percentof the Oscars are awarded to movies released in the fourth quarter of the previous year while27 percent of the winners are movies released in the first quarter of the previous year.
 
 <p align="center">
     <img src="download.png" width=40%>
 </p>
      
-The figure above shows quarterly Oscar wins in the categoryBest Picture.  In this category, 47 pct. of the Oscar Wins are awarded to movies released in the 4thquarter and 27 pct. in the 1st quarter. It  appears  that  movies  released  at  the  end  of  the  year  has  a  higher  probability  ofwinning an Oscar in contrast to movies released during the middle of the year.
+
 
 <p align="center">
     <img src="Plots/plt_budget.png" width=80%>
 </p>
+
+Within our analysis, we are interested in determining whether there are any trends with regard to movie genres that are selected for Oscar nomination.  For each movie, the scraping process returned a list of genres fitting that specific movie.  To categorize Oscar winners by genre, and because genre types will be used in the machine learning predictive process, dummy variables are created for each genre type.  The figure below presents all Oscar winners by genre. There is a clear majority of movies adhering to the drama genre.  Romance and biographical movies are also quite frequent Oscar winners. 
+
 <p align="center">
     <img src="Plots/plt_genres.png" width=80%>
 </p>
 
-<img src="Plots/plt_runtime.png" width=49%> <img src="Plots/plt_metascore.png" width=49%>
+The average runtime for a winning movies is 137 minutes and nearly all of winning movies have a runtime that is between 100 and 200 minutes. The shortest runtime among all nominated movies is 66 minutes while the longest runtime is 238 minutes.  Thus, in contrast to popular belief, Oscar winning movies are not particularly longer than nominee movies. 
 
+<p>
+    <img src="Plots/plt_runtime.png" width=80%>
+</p>
+
+<p>
+    <img src="Plots/plt_metascore.png" width=80%>
+</p>
 
 # Machine learning
 Extension tools provided for machine learning in Python, herein SciKit Learn, make the pro-gramming  very  code  efficient.   That  is  today,  an  entire  algorithm  can  be  written  with  onlya  few  lines  of  code.   In  extension,  many  choices  concerning  the  design  of  algorithm  becomestowed away from the lines of code that are visible in the Notebook.  The following chapterwill  therefore  place  as  much  emphasis,  if  not  more,  on  the  conscious  choices  concerning  thealgorithm design, as it will on the actual lines of code
