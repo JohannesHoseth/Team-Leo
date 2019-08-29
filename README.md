@@ -49,7 +49,7 @@ In order to investigate whether Oscar wins and movie release dates are somehow c
 
 
 <p align="center">
-    <img src="Plots/plt_budget.png" width=80%>
+    <img src="Plots/plt_budget.png" width=100%>
 </p>
 
 Within our analysis, we are interested in determining whether there are any trends with regard to movie genres that are selected for Oscar nomination.  For each movie, the scraping process returned a list of genres fitting that specific movie.  To categorize Oscar winners by genre, and because genre types will be used in the machine learning predictive process, dummy variables are created for each genre type.  The figure below presents all Oscar winners by genre. There is a clear majority of movies adhering to the drama genre.  Romance and biographical movies are also quite frequent Oscar winners. 
