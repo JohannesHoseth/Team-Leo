@@ -20,9 +20,6 @@ machine learning methods to predict the next winning movie. For each movie a ser
         - mapping of scraping procedure? (figure showing different branches of scraping process?)
 
 ## Descriptive statistics
-<p align="center">
-    <img src="Plots/oscarawards.png" width=80%>
-
 
 <p align="center">
     <img src="Plots/plt_budget.png" width=80%>
