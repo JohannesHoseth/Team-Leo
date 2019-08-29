@@ -64,6 +64,8 @@ The average runtime for a winning movies is 137 minutes and nearly all of winnin
     <img src="Plots/plt_runtime.png" width=80%>
 </p>
 
+In addition to the movie characteristics discussed above, data of a more quantitative natureis also collected and examined.  The IMDb website publishes a MetaScore, ranging from 0 to 100,  which  is  indicative  of  a  movie’s  critical  reception. It  is  hypothesized  that, on average, movies that win Oscars should receive higher scores. The figure below plots density distributions forMetaScores for both Oscar-winning and nominated movies.  The data confirms that winningmovies tend to have higher MetaScores than non-winning nominees
+
 <p>
     <img src="Plots/plt_metascore.png" width=80%>
 </p>
