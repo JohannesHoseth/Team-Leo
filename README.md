@@ -9,7 +9,7 @@ machine learning methods to predict the next winning movie. For each movie a ser
 - [x] Add budget and box office numbers to dataset
 - [x] Re-scrape the IMDB sites for updated content
 - [x] Tidy data
-- [ ] Apply machine learning algorithm to dataset
+- [x] Apply machine learning algorithm to dataset
 - [ ] Analyze the logfiles
 - [ ] ***Add more here***
 
@@ -20,8 +20,8 @@ machine learning methods to predict the next winning movie. For each movie a ser
         - mapping of scraping procedure? (figure showing different branches of scraping process?)
 
 ## Descriptive statistics
-<p align="center">
-    <img src="Plots/Qwin1.png" width=80%>
+<p align="left">
+    <img src="Plots/Qwin1.png" width=40%>
     
 <p align="center">
     <img src="Plots/plt_budget.png" width=80%>
